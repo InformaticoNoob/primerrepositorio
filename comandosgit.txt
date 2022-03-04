@@ -1,0 +1,52 @@
+###- PRIMEROS COMANDOS -###
+# git init  | me inicializa todo en git
+# git add nombrearchivo
+# git status
+# git commit | me abre el editor y puedo escribir en el
+# git commit -m "aqui escribo el update q hice"
+*si updateo algun archivo debo volver a hacerle 'git add x'
+# rm nombrearchivo | elimina el archivo, luego debo hacer
+	Luego del "rm nombrearchivo" hago un:
+	#git status | veo q me dice 'deleted: archivotanto' en rojo
+	#git add elsusodichoarchivo
+	#git status | veo q me dice 'deleted: archivotanto' en verde
+	#git commit -m "Eliminando archivotanto"
+	#git status | me tira 'nothing to commit' y el archivo fue deleted
+*Si quiero volver a recuperar un archivo borrado despues de un 'rm archivo',
+debo hacer git status y me lanzará los comandos para recuperar, que serian
+# git restore --staged archivo |, otra vez git status y luego 
+# git restore archivo
+
+# mv nombrearchivo.extension nuevonombre.extension
+	al cambiarle el nombre debo volver a hacerle git add
+	Ej: #mv archivo1.txt nuevoarchivo1.txt
+	    #git status | me refleja q fue deleted el oldname y debo agregar el newname
+	    #git add archivo1.txt nuevoarchivo1.txt
+	    #git commit -m "renombrando archivo".
+	La version corta es:
+	    #git mv archivo1.ext nuevonombre.ext
+	Ej:
+	    #git mv archivo1.txt nuevoarchivo1.txt
+	    #git status
+	    #git commit -m "he cambiado el nombre"
+
+
+###- Ignorar archivos -###
+*Creo un archivo .gitignore , a dicho archivo le agrego el nombre del archivo que quiero q ignore git,
+tambien funciona con carpetas
+
+#git status -s | muestra mucho mas simplificado que archivos no están agregados o comiteados
+#git diff | muestra los cambios
+#git log --oneline | muestra todos los commits con sus nombres e id's
+
+#git branch | para saber en q rama estoy trabajando (main es la principal)
+#git checkout -b nombre
+*Al hacer cambios estando en otra rama no se verá reflejado en la rama principal, para eso, pasamos
+de rama secundaria a rama principal:
+#git checkout main (o en su defecto)
+#git merge nombrerama | (este comando es estando en la rama principal)
+
+
+
+
+
